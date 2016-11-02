@@ -40,14 +40,14 @@ function ninjaConstructor(name,cohort){
   ninjaObj.beltLevel = 0;
   ninjaObj.level = function(){
     for(i = 0; i < 3;i++){
-      if(ninja.belt < 2){
+      if(ninjaObj.belt < 2){
         ninjaObj.belt = belts[ninjaObj.beltLevel];
       }
     }
     return ninjaObj;
   }
   ninjaObj.belt = belts[ninjaObj.beltLevel]
-  console.log(ninjaObj)
+  console.log(ninjaObj);
   return ninjaObj;
 }
 var x = ninjaConstructor("Justin","mean")
