@@ -34,20 +34,25 @@
 
 function ninjaConstructor(name,cohort){
   var ninjaObj= {};
-  var belts = ['yellow','red','black'];
+  var belts = ['White','Yellow','Blue','Red','Black'];
   ninjaObj.name = name;
   ninjaObj.cohort = cohort;
   ninjaObj.beltLevel = 0;
   ninjaObj.level = function(){
-    for(i = 0; i < 3;i++){
-      if(ninjaObj.belt < 2){
-        ninjaObj.belt = belts[ninjaObj.beltLevel];
-      }
+    if(ninjaObj.beltLevel < 4){
+      ninjaObj.beltLevel++
+      ninjaObj.belt = belts[ninjaObj.beltLevel];
     }
-    return ninjaObj;
+    console.log("Name:",ninjaObj.name)
+    console.log("Belt:", ninjaObj.belt)
+    return ninjaObj
   }
-  ninjaObj.belt = belts[ninjaObj.beltLevel]
-  console.log(ninjaObj);
-  return ninjaObj;
+  ninjaObj.belt = belts[ninjaObj.beltLevel];
+  return ninjaObj
 }
 var x = ninjaConstructor("Justin","mean")
+x.level();
+x.level();
+x.level();
+x.level();
+x.level();
